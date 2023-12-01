@@ -2,7 +2,7 @@
 switch ($_REQUEST['acao']) {
     case 'cadastrar':
        
-            $sql = "INSERT INTO veiculo (placa, categoria_idCategoria, modelo_idModelo, dataFabricacao) VALUES ('".$_POST['placa']."', ".$_POST['categoria_idCategoria'].", ".$_POST['modelo_idModelo'].", ".$_POST['dataFabricacao'].")";
+            $sql = "INSERT INTO veiculo (placa, categoria_idCategoria, modelo_idModelo, anoFabricacao) VALUES ('".$_POST['placa']."', ".$_POST['categoria_idCategoria'].", ".$_POST['modelo_idModelo'].", ".$_POST['anoFabricacao'].")";
             $res = $conn->query($sql);
 
             if($conn->error){
@@ -26,7 +26,7 @@ switch ($_REQUEST['acao']) {
             placa ='".$_POST['placa']."', 
             modelo_idModelo=".$_POST['modelo_idModelo'].",
             categoria_idCategoria=".$_POST['categoria_idCategoria'].",
-            dataFabricacao=".$_POST['dataFabricacao']."
+            anoFabricacao=".$_POST['anoFabricacao']."
             WHERE idVeiculo=".$_POST['idVeiculo'];
             $res = $conn->query($sql);
 

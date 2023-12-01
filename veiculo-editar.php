@@ -57,7 +57,7 @@
 
     <div class="mb-3">
         <label>Ano de Fabricação</label>
-        <input type="number" name="dataFabricacao"  id="ano" class="form-control" value="<?php print $row_1->dataFabricacao;?>">
+        <input type="number" name="anoFabricacao"  id="ano" class="form-control" value="<?php print $row_1->anoFabricacao;?>">
     </div>
     <div class="mb-3">
         <label>Placa</label>

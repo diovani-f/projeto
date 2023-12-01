@@ -43,11 +43,11 @@
     </div> 
     <div class="mb-3">
         <label>Ano de Fabricação</label>
-        <input type="number" id="ano" name="dataFabricacao" min="1900" max="2100" required>
+        <input type="number" id="ano" name="anoFabricacao" min="1900" max="2100" required>
     </div>
     <div class="mb-3">
       <label>Placa do veiculo</label>
-      <input type="text" name="placa" class="form-control" maxlength="8" id="placaInput" placeholder="XXX0X00">
+      <input type="text" name="placa" class="form-control" maxlength="9" id="placaInput" placeholder="XXX0X00">
     </div>
 
     <div class="mb-3">
@@ -78,7 +78,7 @@
         formattedValue += cleanedValue[i];
         }
 
-        return formattedValue.substring(0, 8); // Ajusta para o comprimento máximo de 8 caracteres
+        return formattedValue.substring(0, 9); // Ajusta para o comprimento máximo de 8 caracteres
     }
     });
 
@@ -92,7 +92,8 @@
             alert('Por favor, preencha todos os campos.');
             return false; // Impede o envio do formulário se o campo estiver vazio
         }
-        if (placa.length != 8) {
+        //mudar para 9
+        if (placa.length != 9) {
             alert('Por favor, preencha a placa corretamente.');
             return false; // Impede o envio do formulário se o campo estiver vazio
         }

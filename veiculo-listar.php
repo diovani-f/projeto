@@ -24,7 +24,7 @@
             print "<td>".$row->idVeiculo."</td>";
             print "<td>".$row->nomeModelo." - ".$row->nomeMarca."</td>";
             print "<td>".$row->nomeCategoria."</td>";
-            print "<td>".$row->dataFabricacao."</td>";
+            print "<td>".$row->anoFabricacao."</td>";
             print "<td>".$row->placa."</td>";
             print "<td>
             <button class='btn btn-primary' onclick=\"location.href='?page=veiculo-editar&idVeiculo=".$row->idVeiculo."';\">Editar</button>

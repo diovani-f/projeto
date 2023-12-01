@@ -31,7 +31,7 @@
     }
     input.value = value;
   }
-  
+
   function validarFormulario() {
     var nomePessoa = document.getElementById('nomePessoa').value.trim();
     var cpf = document.getElementById('cpf').value.replace(/\D/g, ''); // Remove não numéricos
