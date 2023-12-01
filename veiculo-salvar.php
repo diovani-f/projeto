@@ -1,0 +1,64 @@
+<?php
+switch ($_REQUEST['acao']) {
+    case 'cadastrar':
+       
+            $sql = "INSERT INTO veiculo (placa, categoria_idCategoria, modelo_idModelo, dataFabricacao) VALUES ('".$_POST['placa']."', ".$_POST['categoria_idCategoria'].", ".$_POST['modelo_idModelo'].", ".$_POST['dataFabricacao'].")";
+            $res = $conn->query($sql);
+
+            if($conn->error){
+                print "<script>alert('$conn->error');</script>";
+                print "<script>location.href='?page=veiculo-cadastrar';</script>";
+            }else{
+                if($res==true){
+                    print "<script>alert('Cadastro realizado com sucesso!');</script>";
+                    print "<script>location.href='?page=veiculo-listar';</script>";
+                }
+                else{
+                    print "<script>alert('Cadastro falhou!');</script>";
+                    print "<script>location.href='?page=veiculo-cadastrar';</script>";
+                }
+            }
+
+
+        break;  
+    case 'editar':
+            $sql = "UPDATE veiculo SET 
+            placa ='".$_POST['placa']."', 
+            modelo_idModelo=".$_POST['modelo_idModelo'].",
+            categoria_idCategoria=".$_POST['categoria_idCategoria'].",
+            dataFabricacao=".$_POST['dataFabricacao']."
+            WHERE idVeiculo=".$_POST['idVeiculo'];
+            $res = $conn->query($sql);
+
+            if($conn->error){
+                print "<script>alert('$conn->error');</script>";
+                print "<script>location.href='?page=veiculo-cadastrar';</script>";
+            }else{
+                if($res==true){
+                    print "<script>alert('Cadastro realizado com sucesso!');</script>";
+                    print "<script>location.href='?page=veiculo-listar';</script>";
+                }
+                else{
+                    print "<script>alert('Cadastro falhou!');</script>";
+                    print "<script>location.href='?page=veiculo-cadastrar';</script>";
+                }
+            }
+
+        break;
+    
+    case 'excluir':
+        $sql = "DELETE FROM veiculo where idVeiculo=".$_REQUEST['idVeiculo'];
+        $res = $conn->query($sql);
+        
+        if($conn->affected_rows > 0){
+            print "<script>alert('Apagou com sucesso!');</script>";
+            print "<script>location.href='?page=veiculo-listar';</script>";
+        } else {
+            print "<script>alert('Exclusão FALHOU! Você não pode apagar veículos que estão em propriedades!');</script>";
+            print "<script>location.href='?page=veiculo-listar';</script>";
+        }
+        
+
+        break;
+}
+?>
