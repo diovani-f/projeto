@@ -1,4 +1,4 @@
-<h1>Veiculos sem dono!</h1>
+<h1>Veiculos sem propriedade!</h1>
 <?php
     $sql = "SELECT * FROM veiculos_sem_propriedade";
 
@@ -31,7 +31,7 @@
     }
 
 ?>
-<h1>Veiculos com dono!</h1>
+<h1>Veiculos com propriedade!</h1>
 <?php
     $sql_1 = "SELECT * FROM veiculos_com_propriedade";
 
