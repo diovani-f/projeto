@@ -42,7 +42,7 @@
         </select>
     </div> 
     <div class="mb-3">
-        <label>Ano de Fabricação</label>
+        <label>Ano de Fabricação</label><br>
         <input type="number" id="ano" name="anoFabricacao" min="1900" max="2100" required>
     </div>
     <div class="mb-3">

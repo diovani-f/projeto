@@ -60,7 +60,7 @@
             print "<td>".$row_1->nomeModelo."</td>";
             print "<td>".$row_1->nomeMarca."</td>";
             print "<td>".$row_1->nomeCategoria."</td>";
-            print "<td>".$row_1->dataFabricacao."</td>";
+            print "<td>".$row_1->anoFabricacao."</td>";
             print "<td>".$row_1->dataCompra."</td>";
             print "<td>".$row_1->dataVenda."</td>";
             print "</tr>";
