@@ -1,1 +1,0 @@
-DELETE FROM veiculo where idVeiculo=1
