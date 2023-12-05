@@ -14,9 +14,13 @@
         <label>Veiculo</label>
         <select name="veiculo_idVeiculo" id="veiculo_idVeiculo" class="form-control">
             <?php 
-                 $sql = "SELECT * FROM veiculo 
-                 INNER JOIN modelo on veiculo.modelo_idModelo = modelo.idModelo
-                 INNER JOIN marca ON modelo.marca_idMarca = marca.idMarca;";
+                 $sql = "SELECT veiculo.idVeiculo, veiculo.placa, veiculo.anoFabricacao, modelo.nomeModelo, marca.nomeMarca, categoria.nomeCategoria
+                 FROM veiculo
+                 JOIN modelo ON veiculo.modelo_idModelo = modelo.idModelo
+                 JOIN marca ON modelo.marca_idMarca = marca.idMarca
+                 JOIN categoria ON veiculo.categoria_idCategoria = categoria.idCategoria
+                 LEFT JOIN propriedade ON veiculo.idVeiculo = propriedade.veiculo_idVeiculo
+                 WHERE propriedade.dataVenda <> '0000-00-00' OR propriedade.idPropriedade IS NULL;  ";
                 $res = $conn->query($sql);
 
                 if($res->num_rows > 0){

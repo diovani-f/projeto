@@ -8,7 +8,6 @@
             <?php 
                 $sql = "SELECT * FROM marca";
                 $res = $conn->query($sql);
-
                 if($res->num_rows > 0){
                     while($row = $res->fetch_object()){
                         print "<option value='".$row->idMarca."'>".$row->nomeMarca."</option>";
@@ -17,10 +16,7 @@
                 else{
                     print "<option>Não há marcas cadastradas</option>";
                 }
-
             ?>
-
-
         </select>
     </div>  
   <div class="mb-3">
@@ -41,7 +37,6 @@
       alert('Por favor, preencha todos os campos.');
       return false; // Impede o envio do formulário se o campo estiver vazio
     }
-
     return true;
   }
 </script>

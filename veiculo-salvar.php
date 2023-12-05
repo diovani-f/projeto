@@ -35,11 +35,11 @@ switch ($_REQUEST['acao']) {
                 print "<script>location.href='?page=veiculo-cadastrar';</script>";
             }else{
                 if($res==true){
-                    print "<script>alert('Cadastro realizado com sucesso!');</script>";
+                    print "<script>alert('Edição realizada com sucesso!');</script>";
                     print "<script>location.href='?page=veiculo-listar';</script>";
                 }
                 else{
-                    print "<script>alert('Cadastro falhou!');</script>";
+                    print "<script>alert('Edição falhou!');</script>";
                     print "<script>location.href='?page=veiculo-cadastrar';</script>";
                 }
             }
@@ -54,7 +54,7 @@ switch ($_REQUEST['acao']) {
             print "<script>alert('Apagou com sucesso!');</script>";
             print "<script>location.href='?page=veiculo-listar';</script>";
         } else {
-            print "<script>alert('Exclusão FALHOU! Você não pode apagar veículos que estão em propriedades!');</script>";
+            print "<script>alert('Exclusão FALHOU! Há propriedades cadastradas com esse veiculo!');</script>";
             print "<script>location.href='?page=veiculo-listar';</script>";
         }
         

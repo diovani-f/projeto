@@ -29,22 +29,17 @@ switch ($_REQUEST['acao']) {
                 print "<script>location.href='?page=modelo-listar';</script>";
             } 
         break;
-    
     case 'excluir':
         $sql = "DELETE FROM modelo where idModelo=".$_REQUEST['idModelo'];
         $res = $conn->query($sql);
-
         if($conn->affected_rows > 0){
             print "<script>alert('Apagou com sucesso!');</script>";
             print "<script>location.href='?page=modelo-listar';</script>";
         }
         else{
-            print "<script>alert('Exclusão FALHOU!');</script>";
+            print "<script>alert('Exclusão FALHOU! Há carros cadastrados com esse modelo.');</script>";
             print "<script>location.href='?page=modelo-listar';</script>";
         } 
-
         break;
 }
-
-
 ?>

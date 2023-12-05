@@ -1,7 +1,8 @@
 <?php
 switch ($_REQUEST['acao']) {
     case 'cadastrar':
-            $sql = "INSERT INTO pessoa (nomePessoa, cpf) VALUES ('".$_POST['nomePessoa']."','".$_POST['cpf']."')";
+            $qntdCarros=0;
+            $sql = "INSERT INTO pessoa (nomePessoa, cpf, qntdCarros) VALUES ('".$_POST['nomePessoa']."','".$_POST['cpf']."', '".$qntdCarros."')";
             $res = $conn->query($sql);
 
             if($conn->error){
@@ -9,7 +10,7 @@ switch ($_REQUEST['acao']) {
                 print "<script>location.href='?page=p-cadastrar';</script>";
             }else{
                 if($res==true){
-                    print "<script>alert('Edição realizada com sucesso!');</script>";
+                    print "<script>alert('Cadastro realizado com sucesso!');</script>";
                     print "<script>location.href='?page=p-listar';</script>";
                 }
                 else{
@@ -47,7 +48,7 @@ switch ($_REQUEST['acao']) {
             print "<script>location.href='?page=p-listar';</script>";
         }
         else{
-            print "<script>alert('Exclusão FALHOU! Você não pode apagar uma pessoa, pois ela esta sendo utilizado em uma propriedade!');</script>";
+            print "<script>alert('Exclusão FALHOU! Há propriedades cadastradas com essa pessoa!');</script>";
             print "<script>location.href='?page=p-listar';</script>";
         } 
 

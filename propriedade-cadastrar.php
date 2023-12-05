@@ -6,22 +6,14 @@
         <label>Veiculo/Placa</label>
         <select name="veiculo_idVeiculo" id="veiculo_idVeiculo" class="form-control">
             <?php 
-                $sql = "SELECT * FROM veiculo 
-                INNER JOIN modelo on veiculo.modelo_idModelo = modelo.idModelo
-                INNER JOIN marca ON modelo.marca_idMarca = marca.idMarca;
+                $sql = "SELECT veiculo.idVeiculo, veiculo.placa, veiculo.anoFabricacao, modelo.nomeModelo, marca.nomeMarca, categoria.nomeCategoria
+                FROM veiculo
+                JOIN modelo ON veiculo.modelo_idModelo = modelo.idModelo
+                JOIN marca ON modelo.marca_idMarca = marca.idMarca
+                JOIN categoria ON veiculo.categoria_idCategoria = categoria.idCategoria
+                LEFT JOIN propriedade ON veiculo.idVeiculo = propriedade.veiculo_idVeiculo
+                WHERE propriedade.dataVenda <> '0000-00-00' OR propriedade.idPropriedade IS NULL;                
                 ";
-
-                // Aqui nao deixa o usuario ter propriedade de um carro que ja tem propriedade
-                // $sql = "SELECT *
-                // FROM veiculo v
-                // INNER JOIN modelo m ON v.modelo_idModelo = m.idModelo
-                // INNER JOIN marca ma ON m.marca_idMarca = ma.idMarca
-                // WHERE NOT EXISTS (
-                //     SELECT 1
-                //     FROM propriedade p
-                //     WHERE p.veiculo_idveiculo = v.idVeiculo
-                // );";
-
 
                 $res = $conn->query($sql);
 

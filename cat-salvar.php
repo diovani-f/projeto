@@ -37,7 +37,7 @@ switch ($_REQUEST['acao']) {
             print "<script>location.href='?page=cat-listar';</script>";
         }
         else{
-            print "<script>alert('Exclusão FALHOU! Você não pode apagar uma categoria, pois ela esta sendo utilizado em um veiculo!');</script>";
+            print "<script>alert('Exclusão FALHOU! Há veiculos cadastrados com essa categoria!');</script>";
             print "<script>location.href='?page=cat-listar';</script>";
         } 
 

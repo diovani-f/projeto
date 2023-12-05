@@ -38,7 +38,7 @@ switch ($_REQUEST['acao']) {
             print "<script>location.href='?page=marca-listar';</script>";
         }
         else{
-            print "<script>alert('Exclusão FALHOU! Você não pode apagar uma marca, pois ela esta sendo utilizado em um modelo!');</script>";
+            print "<script>alert('Exclusão FALHOU! Há modelos cadastrados com essa marca!');</script>";
             print "<script>location.href='?page=marca-listar';</script>";
         } 
 

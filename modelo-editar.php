@@ -1,4 +1,3 @@
-
 <h1>Editar modelo!</h1>
 <?php
     $sql_1 = "SELECT * FROM modelo WHERE idModelo=".$_REQUEST['idModelo'];
@@ -9,7 +8,6 @@
 <form action="?page=modelo-salvar" method="POST" onsubmit="return validarFormulario()">
   <input type="hidden" name="acao" value="editar">
   <input type="hidden" name="idModelo" value="<?php print $idModelo;?>">
-
   <div class="mb-3">
         <label>Marca</label>
         <select name="marca_idMarca" id="marca_idMarca" class="form-control">
@@ -29,14 +27,9 @@
                 else{
                     print "<option>Não há marcas cadastradas</option>";
                 }
-
             ?>
-
-
         </select>
     </div>  
-
-
     <div class="mb-3">
         <label>Nome do Modelo</label>
         <input type="text" name="nomeModelo" id="nomeModelo" class="form-control" value="<?php print $row_1->nomeModelo;?>">
@@ -54,7 +47,6 @@
       alert('Por favor, preencha todos os campos.');
       return false; // Impede o envio do formulário se o campo estiver vazio
     }
-
     return true;
   }
 </script>
